@@ -9,3 +9,14 @@ content-type:application/json
   "location": "Location",
   "price": "123"
 }
+
+###
+
+POST http://localhost:3000/api/users
+content-type: application/json
+
+{
+  "email": "john@doe.com",
+  "password": "123123123",
+  "fullName": "John Doe"
+}
