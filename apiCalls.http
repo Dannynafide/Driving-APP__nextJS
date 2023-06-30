@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/offers
+content-type:application/json
+
+{
+  "title": "Title",
+  "mobile": "111222333",
+  "category": "sale",
+  "description": "Description",
+  "location": "Location",
+  "price": "123"
+}
