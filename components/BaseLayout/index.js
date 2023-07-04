@@ -38,7 +38,19 @@ const TopNavigation = () => {
             className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
             <span>Submit offer</span>
           </Link>
+          {/* <Link
+            href="/offers"
+            className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+            <span>All offers</span>
+          </Link> */}
         </div>
+        {session && (
+          <Link
+            href="/offers/my"
+            className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+            <span>My offers</span>
+          </Link>
+        )}
         {session && (
           <button
             onClick={signOut}
