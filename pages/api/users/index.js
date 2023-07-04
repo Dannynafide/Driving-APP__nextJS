@@ -9,7 +9,7 @@ export default async (req, res) => {
 
         res.status(200).json({ status: 'created', user });
       } catch (error) {
-        res.status(422).json({ status: 'noc_created', error });
+        res.status(422).json({ status: 'noc_created', error: error.message });
       }
       break;
     }
