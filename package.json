@@ -1,5 +1,5 @@
 {
-  "name": "yachting_app",
+  "name": "driving_app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "joi": "^17.9.2",
     "next": "^13.4.7",
+    "next-auth": "^4.22.1",
     "postcss": "^8.2.8",
     "prettier": "^2.2.1",
     "react": "^18.2.0",
