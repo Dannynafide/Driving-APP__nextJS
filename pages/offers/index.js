@@ -9,7 +9,6 @@ import paginateOffers from 'services/offers/paginate';
 
 export const getStaticProps = async () => {
   const offers = await paginateOffers();
-  console.log('offers', offers);
 
   return {
     props: {
