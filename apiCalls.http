@@ -11,7 +11,6 @@ content-type:application/json
 }
 
 ###
-
 POST http://localhost:3000/api/users
 content-type: application/json
 
@@ -20,3 +19,12 @@ content-type: application/json
   "password": "123123123",
   "fullName": "John Doe"
 }
+
+###
+GET http://localhost:3000/api/offers/paginate
+
+###
+GET http://localhost:3000/api/offers/paginate?category=sale
+
+###
+GET http://localhost:3000/api/offers/paginate?category=rent
