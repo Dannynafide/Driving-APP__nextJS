@@ -6,7 +6,7 @@ const get = async (id) => {
     .firstPage();
 
   if (offers && offers[0]) {
-    return offers[0].fields;
+    return { airtableId: offers[0].id, ...offers[0].fields };
   }
 };
 
