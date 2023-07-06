@@ -1,13 +1,14 @@
-import { getToken } from 'next-auth/jwt';
+import { getServerSession } from 'next-auth/next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import BaseLayout from 'components/BaseLayout';
+import { authOptions } from 'pages/api/auth/[...nextauth]';
 import getForUser from 'services/offers/getForUser';
 
-export const getServerSideProps = async ({ req }) => {
-  const token = await getToken({ req });
-  if (!token) {
+export const getServerSideProps = async ({ req, res }) => {
+  const session = await getServerSession(req, res, authOptions);
+  if (!session) {
     return {
       redirect: {
         destination: '/user/signin',
@@ -15,7 +16,7 @@ export const getServerSideProps = async ({ req }) => {
       }
     };
   }
-  const offers = await getForUser(token.email);
+  const offers = await getForUser(session.user.email);
 
   return {
     props: {
