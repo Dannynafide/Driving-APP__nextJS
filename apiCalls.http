@@ -28,3 +28,17 @@ GET http://localhost:3000/api/offers/paginate?category=sale
 
 ###
 GET http://localhost:3000/api/offers/paginate?category=rent
+
+###
+GET http://localhost:3000/api/products
+
+
+###
+POST http://localhost:3000/api/checkout
+content-type: application/json
+
+{
+  "id": "rec7As8JTn9FN4PDl",
+  "offerId": 1,
+  "quantity": 1
+}

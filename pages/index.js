@@ -7,7 +7,7 @@ import getRecentOffers from 'services/offers/getRecent';
 import { jsonFetcher } from 'utils/index';
 
 export const getStaticProps = async () => {
-  const offers = await getRecentOffers(2);
+  const offers = await getRecentOffers(4);
 
   return {
     props: {
