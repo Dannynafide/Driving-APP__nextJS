@@ -1,4 +1,5 @@
 import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -79,11 +80,18 @@ export default function OfferPage({ offer }) {
                 </button>
               </div>
             </div>
-            <img
-              alt="ecommerce"
-              className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-              src="https://dummyimage.com/400x400"
-            />
+
+            {offer.imageUrl && (
+              <div className="lg:w-1/2 w-full lg:h-auto object-cover object-center">
+                <Image
+                  alt="cover preview"
+                  src={offer.imageUrl}
+                  width={800}
+                  height={800}
+                  className="rounded"
+                />
+              </div>
+            )}
             {isAuthorized(offer, session) && (
               <p>
                 <Link href={`/offers/${offer.id}/edit`}>Edit this offer</Link>

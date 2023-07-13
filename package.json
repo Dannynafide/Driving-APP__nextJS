@@ -12,6 +12,7 @@
     "airtable": "^0.12.1",
     "autoprefixer": "^10.2.5",
     "classnames": "^2.2.6",
+    "cloudinary": "^1.37.3",
     "crypto": "^1.0.1",
     "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",

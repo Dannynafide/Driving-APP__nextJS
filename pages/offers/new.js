@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
 import BaseLayout from 'components/BaseLayout';
+import { uploadImage } from 'utils';
 
 export default function OfferNew() {
   const offerForm = useRef();
@@ -10,6 +11,13 @@ export default function OfferNew() {
   const [formProcessing, setFormProcessing] = useState(false);
   const router = useRouter();
   const { data: session, status } = useSession();
+  const [imagePreviewUrl, setImagePreviewUrl] = useState();
+
+  const handleImagePreview = (e) => {
+    const url = window.URL.createObjectURL(e.target.files[0]);
+    console.log(`url`, url);
+    setImagePreviewUrl(url);
+  };
 
   useEffect(() => {
     if (!session && status !== 'loading') {
@@ -20,7 +28,6 @@ export default function OfferNew() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formProcessing) return;
-
     setError(null);
     setFormProcessing(true);
     const form = new FormData(offerForm.current);
@@ -33,6 +40,12 @@ export default function OfferNew() {
       location: form.get('location')
     };
 
+    if (form.get('picture')) {
+      const file = await uploadImage(form.get('picture'));
+      payload.imageUrl = file.secure_url;
+    }
+
+    setFormProcessing(false);
     const response = await fetch('/api/offers', {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -40,6 +53,8 @@ export default function OfferNew() {
         'Content-Type': 'application/json'
       }
     });
+
+    console.log('response');
 
     if (response.ok) {
       router.push('/offers/thanks');
@@ -156,6 +171,26 @@ export default function OfferNew() {
                     name="description"
                     required
                     className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                </div>
+              </div>
+              {imagePreviewUrl && (
+                <div className="p-2 w-full">
+                  <img alt="cover preview" src={imagePreviewUrl} className="rounded" />
+                </div>
+              )}
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label htmlFor="picture" className="leading-7 text-sm text-gray-600">
+                    Picture
+                  </label>
+                  <input
+                    type="file"
+                    onChange={handleImagePreview}
+                    id="picture"
+                    name="picture"
+                    required
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
                 </div>
               </div>
               <div className="p-2 w-full">
