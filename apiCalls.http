@@ -42,3 +42,20 @@ content-type: application/json
   "offerId": 1,
   "quantity": 1
 }
+
+###
+POST http://localhost:3000/api/users/resetPassword
+content-type: application/json
+
+{
+  "email": "a@a.pl"
+}
+
+###
+PUT http://localhost:3000/api/users/resetPassword
+content-type: application/json
+
+{
+  "resetToken": "11b29a5a5cb819cb1faaf9afe2ccc6d008908fd7f478",
+  "password": "a"
+}
