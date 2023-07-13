@@ -15,10 +15,10 @@ const OfferItem = ({ offer }) => {
             height={170}
             alt="content"
           />
-          <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">
+          <h2 className="tracking-widest text-indigo-700 text-xs font-medium title-font">
             {offer.category}
-          </h3>
-          <h2 className="text-lg text-gray-900 font-medium title-font mb-4">{offer.title}</h2>
+          </h2>
+          <h3 className="text-lg text-gray-900 font-medium title-font mb-4">{offer.title}</h3>
           <p className="leading-relaxed text-base">
             {offer.description.length > 100
               ? offer.description.substring(0, 100) + '...'
