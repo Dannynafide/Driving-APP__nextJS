@@ -35,5 +35,6 @@ Search for all types of car rentals near you, including sailing cars, quads and 
 
 ## Illustrations
 
-<img alt="Home page" src="./github/allOffers.png" width="50%" height="50%" />
-<img alt="Home page" src="./github/admin.png" width="50%" height="50%" />
+<img alt="Home page" src="./github/allOffers.png" width="90%" height="90%" />
+<br/><br/>
+<img alt="Home page" src="./github/admin.png" width="90%" height="90%" />
