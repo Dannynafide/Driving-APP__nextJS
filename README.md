@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Driving APP
 
-## Getting Started
+## General info
 
-First, run the development server:
+Project created with an online course using React and Next.js. Thanks to the creation frontend and backend of the project, I gained more knowledge about connect to database, creat endpoints, Airtable, micropayments with Stripe, Tailwindcss and Cloudinary.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+#### Aplication description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Search for all types of car rentals near you, including sailing cars, quads and luxury motorbikes.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Technologies
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- ReactJS 18.2
+- Next.js 13.4 (+ SWR)
+- NextAuth.js 4.22
+- Tailwind CSS 3.3
+- Airtable
+- Stripe (webhooks and ngrok)
+- Cloudinary
+- Nodemailer
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Website
 
-## Learn More
+[Driving APP - website](https://...)
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Adding, editing and deleting offers by the author and admin.
+- Sorting offers (All / For sale / For rent)
+- Administration panel
+- Payment service by Stripe
+  - Added support for Stripe webhooks
+- Uploading photos to Cloudinary
+- Reset password and send an email
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Illustrations
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img alt="Home page" src="./public//github/homePage.jpeg" width="50%" height="50%" />

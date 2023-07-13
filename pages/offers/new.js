@@ -86,7 +86,7 @@ export default function OfferNew() {
               Submit new offer
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.
+              The more details, the better!
             </p>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
